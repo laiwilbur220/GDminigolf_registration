@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三屆小金桿迷你高爾夫大賽</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            /* 熱帶夕陽漸層背景 */
+            background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 99%, #FECFEF 100%);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+        }
+        .tropical-title {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* 漂浮動畫 */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating-element {
+            animation: float 3s ease-in-out infinite;
+        }
+        .leaf-pattern {
+            position: absolute;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="min-h-screen py-10 px-4 sm:px-8 relative overflow-x-hidden">
+
+    <!-- 背景裝飾元素 (改為 fixed 固定在畫面中，不會因為捲動而消失) -->
+    <div class="fixed top-[-5%] left-[-5%] text-9xl floating-element" style="animation-delay: 0s; opacity: 0.2; z-index: 0;">🌴</div>
+    <div class="fixed bottom-[-5%] right-[-5%] text-9xl floating-element" style="animation-delay: 1.5s; opacity: 0.2; z-index: 0;">🌺</div>
+    <div class="fixed top-[20%] right-[10%] text-7xl floating-element" style="animation-delay: 0.5s; opacity: 0.15; z-index: 0;">🍍</div>
+    <div class="fixed bottom-[20%] left-[10%] text-7xl floating-element" style="animation-delay: 1s; opacity: 0.15; z-index: 0;">🦩</div>
+
+    <!-- 邀請卡主體 (改為 mx-auto 置中並允許上下自然擴展與捲動) -->
+    <div class="glass-card w-full max-w-2xl mx-auto rounded-3xl p-8 sm:p-12 relative z-10 text-center my-4 sm:my-8 shadow-2xl">
+        
+        <!-- 頂部裝飾 -->
+        <div class="flex justify-center items-center gap-4 mb-6">
+            <span class="text-4xl">🍹</span>
+            <span class="text-5xl floating-element">🏆</span>
+            <span class="text-4xl">🥥</span>
+        </div>
+
+        <!-- 標題 -->
+        <h2 class="text-xl sm:text-2xl font-bold text-teal-700 tracking-widest mb-2">ALOHA! 準備好登島了嗎？</h2>
+        <h1 class="text-4xl sm:text-5xl font-black mb-8 tropical-title leading-tight">
+            第三屆「小金桿」<br>迷你高爾夫大賽
+        </h1>
+
+        <!-- 引言 -->
+        <p class="text-gray-700 text-lg leading-relaxed mb-8 px-2 sm:px-8 font-medium">
+            睽違一年，那個「贏了就能帶回家」的傳奇獎盃<span class="text-yellow-500 font-bold">「小金桿」</span>再度降臨現場。<br>
+            這是一場關於準度、運氣以及誰的心臟最強大的友誼競賽。<br>
+            獎盃只有一座，衛冕者已在場邊巡視，挑戰者正摩拳擦掌。<br>
+            這道金色的耀眼光芒，今年會飄向何處？現在就站上出擊點，寫下你的傳奇！
+        </p>
+
+        <!-- 資訊區塊 -->
+        <div class="bg-teal-50 rounded-2xl p-6 mb-8 text-left inline-block w-full border border-teal-100 shadow-sm">
+            <ul class="space-y-4 text-gray-800 text-lg">
+                <li class="flex items-start">
+                    <span class="text-2xl mr-3">📅</span>
+                    <div>
+                        <strong class="text-teal-800 block">決戰日期：</strong>
+                        <span>5月9日 ～ 5月10日</span>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-2xl mr-3">📍</span>
+                    <div>
+                        <strong class="text-teal-800 block">秘密島嶼 (地點)：</strong>
+                        <span>台中 【六度空間 迷你高爾夫球場】<br><span class="text-sm text-gray-500"></span></span>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-2xl mr-3">👕</span>
+                    <div>
+                        <strong class="text-teal-800 block">Dress Code (建議穿著)：</strong>
+                        <span>熱帶風情、夏威夷衫、草帽、墨鏡，<br>或任何能閃瞎對手的度假穿搭！</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 報名表單區塊 -->
+        <div class="bg-white/60 rounded-2xl p-6 mb-4 text-left border border-white/50 shadow-sm backdrop-blur-sm">
+            <h3 class="text-2xl font-bold text-teal-800 mb-4 text-center">📝 登島報名表</h3>
+            <form id="rsvpForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2" for="name">選手姓名 / 綽號</label>
+                    <input class="w-full px-4 py-2 rounded-lg border border-teal-200 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 bg-white/80" type="text" id="name" required placeholder="請輸入你的大名">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2" for="contact">聯絡方式 (Line ID / 手機)</label>
+                    <input class="w-full px-4 py-2 rounded-lg border border-teal-200 focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 bg-white/80" type="text" id="contact" required placeholder="方便聯絡的資訊">
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2">預計參戰天數</label>
+                    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="radio" name="days" value="5/9、5/10 兩天全參與" class="form-radio text-teal-500 w-5 h-5" required>
+                            <span class="ml-2 text-gray-800">兩天全程參與</span>
+                        </label>
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="radio" name="days" value="僅參與 5/9" class="form-radio text-teal-500 w-5 h-5">
+                            <span class="ml-2 text-gray-800">僅戰 5/9</span>
+                        </label>
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="radio" name="days" value="僅參與 5/10" class="form-radio text-teal-500 w-5 h-5">
+                            <span class="ml-2 text-gray-800">僅戰 5/10</span>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-gray-700 font-bold mb-2">5/9 住宿安排</label>
+                    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4">
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="radio" name="accommodation" value="需要幫忙安排住宿" class="form-radio text-teal-500 w-5 h-5" required>
+                            <span class="ml-2 text-gray-800">需協助安排</span>
+                        </label>
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="radio" name="accommodation" value="住宿自理/不用住宿" class="form-radio text-teal-500 w-5 h-5">
+                            <span class="ml-2 text-gray-800">自理 / 不需住宿</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="mt-8 text-center pt-6 border-t border-gray-200/50">
+                    <button type="submit" class="bg-gradient-to-r from-teal-400 to-emerald-500 hover:from-teal-500 hover:to-emerald-600 text-white font-bold py-3 px-10 rounded-full text-xl shadow-lg transform transition hover:scale-105 w-full sm:w-auto">
+                        確認送出報名 🏝️
+                    </button>
+                    <p class="text-sm text-gray-600 mt-3 font-medium">💡 點擊後資料將直接傳送至主辦人的 Google Sheets！</p>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        // ⚠️ 請將下方的網址替換成你部署 Google Apps Script 後取得的 Web App URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxW-e59ZiGqur71XUGRLbVPxCyCYUylNNwxxItkWJ7qiqxiDiBa9nUFuZQH2y88pODT/exec';
+
+        document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            if (scriptURL === '請在這裡貼上你的_Web_App_URL') {
+                alert('系統提示：請先在程式碼中填入 Google Apps Script 的網址，才能成功送出資料喔！');
+                return;
+            }
+
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '送出中... ⏳';
+            submitBtn.disabled = true;
+            
+            // 收集表單資料
+            const formData = {
+                name: document.getElementById('name').value,
+                contact: document.getElementById('contact').value,
+                days: document.querySelector('input[name="days"]:checked').value,
+                accommodation: document.querySelector('input[name="accommodation"]:checked').value
+            };
+            
+            try {
+                // 將資料發送至 Google Apps Script
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    headers: {
+                        // 使用 text/plain 避免跨域 (CORS) 預檢請求的錯誤
+                        'Content-Type': 'text/plain;charset=utf-8',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                if (result.status === 'success') {
+                    alert('✅ 報名成功！你的資料已傳送給主辦人。');
+                    this.reset(); // 清空表單
+                } else {
+                    throw new Error('回傳狀態錯誤');
+                }
+            } catch (err) {
+                console.error("Error submitting form: ", err);
+                alert('送出失敗，請檢查網路連線或稍後再試。');
+            } finally {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
